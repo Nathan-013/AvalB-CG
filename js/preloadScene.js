@@ -8,6 +8,8 @@ export default class PreloadScene extends Phaser.Scene {
   preload() {
    this.load.image('tela-inicial', 'assets/images/tela-inicial.png')
    this.load.image('tela-inicial2', 'assets/images/tela-inicial2.png')
+
+   this.load.audio('music-intro', 'assets/audio/Retro_Music.mp3')
   }
 
   create() {
@@ -19,16 +21,19 @@ export default class PreloadScene extends Phaser.Scene {
       ],
       frameRate: 4,
       repeat: -1
-  });
+    });
 
     this.add.sprite('0', '0', 'tela-inicial').setOrigin(0,0)
       .play('blink-text')
+
+    var music = this.sound.add('music-intro')
+    music.play({
+      loop:true
+    })
+      
     this.input.on('pointerdown', () => {
+      music.stop()
       this.scene.start('GameScene')
     });
-  }
-
-  update() {
-
   }
 }

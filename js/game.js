@@ -54,7 +54,6 @@ export default class GameScene extends Phaser.Scene {
   }
 
   create() {
-
     const larguraJogo = this.sys.canvas.width;
     // const alturaJogo = this.sys.canvas.height;
 
@@ -205,7 +204,6 @@ export default class GameScene extends Phaser.Scene {
 
     this.anims.create({
       key: 'jump-left',
-      // frames: this.anims.generateFrameNumbers('player', { start: 4, end: 5 }),
       frames: [{ key: 'player', frame: 12 }],
       frameRate: 10,
       repeat: -1
@@ -232,7 +230,6 @@ export default class GameScene extends Phaser.Scene {
     })
 
     this.physics.add.collider(player, platform)
-    // this.physics.add.collider(wizard, platform)
 
     cursors = this.input.keyboard.createCursorKeys();
   }
@@ -281,7 +278,7 @@ export default class GameScene extends Phaser.Scene {
     }
 
     // console.log(player.body.velocity.y)
-    if (player.body.velocity.y >= 450) {
+    if (player.body.velocity.y >= 650) {
       highFall = true
     }
 

@@ -15,8 +15,4 @@ export default class endGameScene extends Phaser.Scene {
       this.scene.start('GameScene')
     });
   }
-
-  update() {
-
-  }
 }
