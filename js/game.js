@@ -296,5 +296,7 @@ export default class GameScene extends Phaser.Scene {
 }
 
 function endGame() {
-  this.scene.start('endGameScene')
+  setTimeout(() => {
+    this.scene.start('endGameScene')
+  }, 1000)
 }
