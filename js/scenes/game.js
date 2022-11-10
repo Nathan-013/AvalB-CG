@@ -218,7 +218,7 @@ loadFont('retro', 'assets/fonts/Retro-Gaming.ttf')
 let flag1 = true
 function endGame() {
   if (flag1) {
-    const princessText = `Que bom que você chegou!.\nVocê conhece o Mario? rs`
+    const princessText = `Ainda bem que alguém chegou!\nVocê conhece o Mario? rs`
     
     this.add.text(350, 30 * 4, princessText, { 
       fontFamily: 'retro', 

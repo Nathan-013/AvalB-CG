@@ -219,12 +219,16 @@ function destroyScene() {
       alphaBottomRight: { value: 1, duration: 10000, ease: 'Power1' },
       alphaBottomLeft: { value: 1, duration: 5000, ease: 'Power1', delay: 5000 },
       yoyo: true,
-      // loop: -1
     });
   
     setTimeout(() => {
-      document.querySelector('body').innerHTML = '<h1>FIM DE JOGO<h1/>'
-      alert('DÁ UM F5 PRA RECARREGAR AI, AINDO TO VENDO ESSE BGL xD')
+      document.querySelector('body').innerHTML = `
+      <div class="end-game">
+        <h1 class="text">FIM DE JOGO</h1>
+        <h4 class="text">O Pain destruiu o mapa</h4>
+        <p class="text">Pressione F5 ou recarregue a página para jogar novamente</p>
+      </div>
+      `
     }, 4000)
   }
 }

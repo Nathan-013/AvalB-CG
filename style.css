@@ -1,3 +1,35 @@
 body {
   background-color: #161612;
 }
+
+.end-game {
+  background: #000;
+  display: block;
+  margin: 200px auto;
+  align-items: center;
+}
+
+.text {
+  margin-bottom: 5px;
+  padding: 10px;
+  font-family: 'retro';
+  text-align: center;
+  color: red;
+}
+
+h1.text {
+  padding-top: 50px;
+  margin: 0;
+  font-size: 40px ;
+}
+
+h4.text {
+  padding-top: 0;
+  margin: -10px;
+}
+
+p.text {
+  padding-top: 50px;
+  font-size: 15px;
+  color: rgb(124, 4, 4);
+}
