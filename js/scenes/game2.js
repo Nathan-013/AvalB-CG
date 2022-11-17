@@ -6,11 +6,13 @@ import Itachi from "../elements/itachi.js";
 import Player from "../elements/player.js"
 import Sharingan from "../elements/sharingan.js";
 import Wizard from "../elements/wizard.js";
+import { retroMusic } from "./preloadScene.js";
 
 var highFall = false
 export const coin = {
   collected: 0
 }
+
 
 
 export default class GameScene2 extends Phaser.Scene {
@@ -90,6 +92,13 @@ export default class GameScene2 extends Phaser.Scene {
     platform.create(1590, 2270, 'invisible').setSize(43, 530) //parede2(fase1)
     platform.create(1595, 2760, 'invisible').setSize(245, 60) //chao-arvore(fase1)
     platform.create(2000, 3200, 'invisible').setSize(800, 30) //chao-arvore(fase1-extra)
+
+    //music
+    this.music = retroMusic
+
+    if (!this.music.isPlaying) {
+      this.music.play()
+    }
 
     //player
     this.player = new Player(this, 200, 3100)//3100
@@ -208,6 +217,7 @@ export default class GameScene2 extends Phaser.Scene {
 let audioFlag = 1
 function destroyScene() {
   if (audioFlag) {
+    this.music.stop()
     this.audioPain.play()
     audioFlag = 0
 
@@ -236,6 +246,7 @@ function destroyScene() {
 let flagWiz = true
 function touchWizard() {
   if (flagWiz) {
+    this.music.pause()
     this.add.text(1550, 270, `Venha, vou te levar ao castelo!`, {
       fill: '#000',
       fontFamily: 'retro',
@@ -280,7 +291,7 @@ let itachiText = ''
 let coinReceivedText = ''
 let flagItachi = true
 function itachiInteraction() {
-  if (flagItachi) {
+  if (flagItachi && !this.sharingan) {
     if (!flag) {
       itachiText = ''
     } else {

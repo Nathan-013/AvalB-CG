@@ -1,10 +1,12 @@
+export let retroMusic
+
 export default class PreloadScene extends Phaser.Scene {
   constructor() {
     super({
       key: 'PreloadScene'
     });
   }
-  
+
   preload() {
   }
 
@@ -23,15 +25,14 @@ export default class PreloadScene extends Phaser.Scene {
       .play('blink-text')
 
     this.music = this.sound.add('music-intro')
+    retroMusic = this.music
     this.music.play({
       loop:true
     })
 
     this.input.on('pointerdown', () => {
-      this.music.stop()
+      // this.music.stop()
       this.scene.start('GameScene2')
     });
-
   }
 }
-

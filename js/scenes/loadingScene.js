@@ -75,9 +75,6 @@ export default class LoadingScene extends Phaser.Scene {
     this.load.spritesheet('wizard', 'assets/sprites/wizard.png', {
       frameWidth: 1386 / 6, frameHeight: 190
     })
-    this.load.spritesheet('elder', 'assets/sprites/elder.png', {
-      frameWidth: 128 / 4, frameHeight: 32
-    })
     this.load.spritesheet('coin', 'assets/sprites/coin.png', {
       frameWidth: 105, frameHeight: 100
     })

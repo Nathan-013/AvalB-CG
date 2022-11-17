@@ -7,6 +7,7 @@ import Player from '../elements/player.js'
 import Coin from '../elements/coin.js'
 import Wizard from '../elements/wizard.js'
 import { collectCoin, coin } from './game2.js'
+import { retroMusic } from './preloadScene.js'
 
 var highFall = false
 
@@ -94,6 +95,10 @@ export default class GameScene extends Phaser.Scene {
     //TOCHA GRANDE
     this.bigtorchR = new TochaG(this, 740, 64*4)
     this.bigtorchL = new TochaG(this, 80, 63*4)
+
+    //music
+    this.music = retroMusic
+    this.music.resume()
 
     //JOGADOR
     this.player = new Player(this, 350,  690*4) //690 - 100
@@ -218,6 +223,7 @@ loadFont('retro', 'assets/fonts/Retro-Gaming.ttf')
 let flag1 = true
 function endGame() {
   if (flag1) {
+    this.music.stop()
     const princessText = `Ainda bem que alguém chegou!\nVocê conhece o Mario? rs`
     
     this.add.text(350, 30 * 4, princessText, { 
